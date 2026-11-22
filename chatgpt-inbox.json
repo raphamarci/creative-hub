@@ -17,6 +17,23 @@
         "notes": "SSX On Tour reference; intended video and mood not categorized yet."
       },
       "images": []
+    },
+    {
+      "id": "music-jordin-sparks-one-step-at-a-time",
+      "collection": "music",
+      "entry": {
+        "title": "One Step at a Time",
+        "artist": "Jordin Sparks",
+        "url": "",
+        "source": "Manual",
+        "vibe": "Upbeat, optimistic",
+        "fits": "",
+        "moment": "Intermediary / working montage",
+        "usage": "Not used",
+        "usedIn": "",
+        "notes": "Potential montage music while working; transitional sequence between scenes."
+      },
+      "images": []
     }
   ]
 }
