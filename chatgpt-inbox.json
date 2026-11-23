@@ -34,6 +34,23 @@
         "notes": "Potential montage music while working; transitional sequence between scenes."
       },
       "images": []
+    },
+    {
+      "id": "music-ashe-lasso-the-moon",
+      "collection": "music",
+      "entry": {
+        "title": "Lasso the Moon",
+        "artist": "Ashe",
+        "url": "",
+        "source": "Manual",
+        "vibe": "Upbeat, energetic",
+        "fits": "",
+        "moment": "",
+        "usage": "Not used",
+        "usedIn": "",
+        "notes": "Scene placement not yet determined."
+      },
+      "images": []
     }
   ]
 }
