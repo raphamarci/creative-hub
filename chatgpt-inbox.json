@@ -51,6 +51,16 @@
         "notes": "Scene placement not yet determined."
       },
       "images": []
+    },
+    {
+      "id": "editing-dedicated-music-selection-block",
+      "collection": "editing",
+      "entry": {
+        "title": "Dedicated music selection block",
+        "category": "Editing workflow",
+        "notes": "Music selection takes substantial time. Budget a dedicated 30–45-minute session for auditioning tracks against the actual footage; do not assume the entire music pass will fit in one session. Match rhythm, tempo and emotional tone to playback speed. Gentle atmospheric tracks may clash with sped-up work montages; test a more defined, upbeat rhythmic pulse. Keep music on separate Premiere Pro audio tracks for easy replacement."
+      },
+      "images": []
     }
   ]
 }
