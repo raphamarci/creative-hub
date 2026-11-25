@@ -61,6 +61,16 @@
         "notes": "Music selection takes substantial time. Budget a dedicated 30–45-minute session for auditioning tracks against the actual footage; do not assume the entire music pass will fit in one session. Match rhythm, tempo and emotional tone to playback speed. Gentle atmospheric tracks may clash with sped-up work montages; test a more defined, upbeat rhythmic pulse. Keep music on separate Premiere Pro audio tracks for easy replacement."
       },
       "images": []
+    },
+    {
+      "id": "editing-ai-assisted-premiere-experiment",
+      "collection": "editing",
+      "entry": {
+        "title": "AI-Assisted Premiere Pro Editing — Vlog #2 Experiment",
+        "category": "Future editing workflow experiment",
+        "notes": "Objective: Reduce tedious footage handling and preliminary assembly while retaining full editorial judgment over story, humor, pacing, music, and the final cut.\nTiming: Vlog #1 remains entirely manually edited to establish a creative baseline. After Vlog #1 is published, test Premiere Pro built-in AI features and assess Codex + an unofficial Premiere Pro MCP integration. Consider piloting the assisted process on Vlog #2; not a committed workflow or start date.\nProposed pipeline: 1) Import DJI Osmo Action 6 footage into Premiere. 2) Transcribe with Whisper/WhisperX and organize clips with timestamps. 3) Use visual analysis to tag scenes and identify notable reactions/reflections. 4) Generate possible narrative arcs from actual footage. 5) User picks a narrative direction. 6) Test Codex + Premiere MCP to build an editable preliminary timeline if integration works. 7) User manually refines storytelling, rhythm, sound design, color, and final cut.\nTools to evaluate: Premiere native AI and text-based editing; Codex with unofficial community Premiere MCP; local Whisper/WhisperX transcription; separate footage/visual analysis. MCP editing commands alone do not understand footage content.\nTest criteria: setup difficulty, data privacy, timeline accuracy, project/sequence compatibility, editability, time saved versus manual Vlog #1 baseline, and whether AI suggestions reduce or dilute the creator's own storytelling judgment. Work on a duplicate Premiere project; verify capabilities and safety before letting automation alter a timeline.\nAlternative: Trial this approach before committing effort to building the standalone Story Producer Windows application.\nRepository to evaluate (not vetted for reliability/security): https://github.com/hetpatel-11/Adobe_Premiere_Pro_MCP\nLimitations: community integration is unofficial and untested; support and editing scope depend on the current version; no assumption of native ChatGPT conversational timeline editing or any release date."
+      },
+      "images": []
     }
   ],
   "workflowUpdates": [
