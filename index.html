@@ -265,7 +265,55 @@ function activeWorkflow(){data.workflow=data.workflow||{};const id=String(data.w
 function setWorkflowVideo(id){data.workflow=data.workflow||{};data.workflow.currentId=id;activeWorkflow();save();render()}
 function setWorkflowStage(i,checked){const w=activeWorkflow();w.done=checked?[...new Set([...w.done,i])]:w.done.filter(x=>x!==i);save();render()}
 function setWorkflowField(key,value){activeWorkflow()[key]=value;save()}
-function workflow(){const w=activeWorkflow(),id=String(data.workflow.currentId),video=data.videos.find(v=>String(v.id)===id),count=w.done.length;return `<div class="top"><div><h1>Current Video Workflow</h1><p>One video at a time. Save progress, finish, publish.</p></div><button class="primary" onclick="nav('videos')">Open video tracker</button></div><div class="panel"><div class="workflow-head"><div style="flex:1;min-width:220px"><div class="tiny muted" style="margin-bottom:8px">ACTIVE VIDEO</div><select aria-label="Active video" onchange="setWorkflowVideo(this.value)">${data.videos.map(v=>`<option value="${v.id}" ${String(v.id)===id?'selected':''}>${esc(v.title)}</option>`).join('')}</select></div><div style="min-width:170px"><div class="tiny muted">WORKFLOW PROGRESS</div><div class="stat" style="font-size:24px">${count} / ${workflowStages.length}</div></div></div><div class="progress" style="margin-top:14px"><div style="width:${100*count/workflowStages.length}%;background:var(--workflow-color)"></div></div><p class="tiny">Status: ${esc(video?.status||'—')} · Footage: ${esc(video?.footage||'—')} · Packaging: ${esc(video?.packaging||'Not chosen')}</p></div><div class="workflow-columns"><div class="panel"><h2>Editing checklist</h2>${workflowStages.map(([name,description],i)=>`<div class="stage"><input id="stage-${i}" type="checkbox" ${w.done.includes(i)?'checked':''} onchange="setWorkflowStage(${i},this.checked)"><label for="stage-${i}"><b>${i+1}. ${esc(name)}</b><small>${esc(description)}</small><small>${(['shots','philosophy','editing','editing','epilogue','editing','editing','playbook','playbook','videos'][i])?`<button type="button" onclick="nav('${['shots','philosophy','editing','editing','epilogue','editing','editing','playbook','playbook','videos'][i]}')">Open reference ↗</button>`:''}</small></label></div>`).join('')}</div><div style="display:grid;gap:18px;align-content:start"><div class="panel"><h2>Next editing action</h2><p class="tiny">Write the very next concrete step.</p><textarea class="workflow-note" oninput="setWorkflowField('next',this.value)" placeholder="Example: review the 20 minutes of Halloween street footage…">${esc(w.next)}</textarea></div><div class="panel"><h2>Story and editing notes</h2><p class="tiny">Keep timecodes, funny moments, missing shots, and packaging thoughts here.</p><textarea class="workflow-note" style="min-height:200px" oninput="setWorkflowField('notes',this.value)" placeholder="00:42 — funny reaction…">${esc(w.notes)}</textarea></div><div class="panel"><h2>Quick navigation</h2><div class="tile-actions"><button onclick="nav('packaging')">Packaging Library</button><button onclick="nav('editing')">Editing Playbook</button><button onclick="nav('playbook')">Packaging Playbook</button><button onclick="nav('shots')">Shot Library</button><button onclick="nav('epilogue')">Epilogue</button><button onclick="nav('philosophy')">Project Philosophy</button></div></div></div></div>`}
+
+// Detailed production stages use stable IDs; old checklist indexes are unchanged.
+function hubWorkflowRows(w){
+ const rows=workflowStages.map(([name,description],i)=>({i,name,description,reference:['shots','philosophy','editing','editing','epilogue','editing','editing','playbook','playbook','videos'][i]}));
+ if(!w.detailedEdit)return rows;
+ rows[4].name='Comedic edits and visual polish';
+ rows[5].name='Final audio mix';
+ rows[5].description='Balance dialogue, commentary, music and sound effects after all audio is present.';
+ rows[6].name='Color grade and captions';
+ rows[6].description='Correct exposure and white balance, match shots, grade the finished cut, and complete captions/annotations.';
+ rows.push({i:10,name:'Music selection and placement',description:'Choose music and place it against the edited footage.',reference:'music'},{i:11,name:'Retrospective commentary',description:'Film and integrate reflective commentary.',reference:'editing'});
+ return [0,1,2,3,10,4,11,5,6,7,8,9].map(i=>rows[i]);
+}
+function hubApplyWorkflowUpdates(feed){
+ let changed=0;
+ if(!Array.isArray(feed.workflowUpdates))return changed;
+ for(const u of feed.workflowUpdates){
+   if(!u||typeof u.id!=='string'||!/^[a-zA-Z0-9._-]{1,100}$/.test(u.id)||typeof u.videoTitle!=='string')continue;
+   const v=data.videos.find(v=>String(v.title||'').trim().toLowerCase()===u.videoTitle.trim().toLowerCase());
+   if(!v)continue;
+   data.workflow??={};data.workflow.projects??={};
+   const id=String(v.id),w=data.workflow.projects[id]??={done:[],notes:'',next:'',updated:''};
+   const applied=Array.isArray(w.appliedChatUpdates)?w.appliedChatUpdates:[];
+   if(applied.includes(u.id))continue;
+   if(u.detailedEdit===true)w.detailedEdit=true;
+   const allowed=new Set(hubWorkflowRows(w).map(r=>r.i));
+   w.done=[...new Set([...(Array.isArray(w.done)?w.done:[]),...(Array.isArray(u.completedStages)?u.completedStages.filter(i=>allowed.has(i)):[])])];
+   if(typeof u.runtime==='string'&&/^\d+:\d{2}$/.test(u.runtime))w.runtime=u.runtime;
+   if(typeof u.note==='string'){
+     const line=u.note.slice(0,4000);
+     w.notes=[String(w.notes||''),line].filter(Boolean).join('\n\n');
+     v.notes=[String(v.notes||''),line].filter(Boolean).join('\n\n');
+   }
+   if(typeof u.next==='string'&&!['Published','Archived'].includes(v.status)){
+     const next=u.next.slice(0,1000);
+     if(w.next&&w.next!==next)w.notes+='\n\nPrevious next action: '+w.next;
+     w.next=next;
+   }
+   if(u.status==='Editing'&&['Idea','Footage available','Ready','Editing'].includes(v.status))v.status='Editing';
+   // Never change the selected active video or discard any pre-existing checked steps.
+   w.appliedChatUpdates=[...applied,u.id];changed++;
+   if(/halloween in nyc/i.test(v.title)){
+     for(const t of data.tasks||[])if(t.title==='Review Halloween footage'||t.title==='Build rough cut')t.done=true;
+   }
+ }
+ return changed;
+}
+
+function workflow(){const w=activeWorkflow(),id=String(data.workflow.currentId),video=data.videos.find(v=>String(v.id)===id),stages=hubWorkflowRows(w),count=stages.filter(r=>w.done.includes(r.i)).length;return `<div class="top"><div><h1>Current Video Workflow</h1><p>One video at a time. Save progress, finish, publish.</p></div><button class="primary" onclick="nav('videos')">Open video tracker</button></div><div class="panel"><div class="workflow-head"><div style="flex:1;min-width:220px"><div class="tiny muted" style="margin-bottom:8px">ACTIVE VIDEO</div><select aria-label="Active video" onchange="setWorkflowVideo(this.value)">${data.videos.map(v=>`<option value="${v.id}" ${String(v.id)===id?'selected':''}>${esc(v.title)}</option>`).join('')}</select></div><div style="min-width:170px"><div class="tiny muted">WORKFLOW PROGRESS</div><div class="stat" style="font-size:24px">${count} / ${stages.length}</div></div></div><div class="progress" style="margin-top:14px"><div style="width:${100*count/stages.length}%;background:var(--workflow-color)"></div></div><p class="tiny">Status: ${esc(video?.status||'—')} · Footage: ${esc(video?.footage||'—')} · Packaging: ${esc(video?.packaging||'Not chosen')}${w.runtime?' · Last confirmed runtime: '+esc(w.runtime):''}</p></div><div class="workflow-columns"><div class="panel"><h2>Editing checklist</h2>${stages.map(({i,name,description,reference},position)=>`<div class="stage"><input id="stage-${i}" type="checkbox" ${w.done.includes(i)?'checked':''} onchange="setWorkflowStage(${i},this.checked)"><label for="stage-${i}"><b>${position+1}. ${esc(name)}</b><small>${esc(description)}</small><small>${reference?`<button type="button" onclick="nav('${reference}')">Open reference ↗</button>`:''}</small></label></div>`).join('')}</div><div style="display:grid;gap:18px;align-content:start"><div class="panel"><h2>Next editing action</h2><p class="tiny">Write the very next concrete step.</p><textarea class="workflow-note" oninput="setWorkflowField('next',this.value)" placeholder="Example: review the 20 minutes of Halloween street footage…">${esc(w.next)}</textarea></div><div class="panel"><h2>Story and editing notes</h2><p class="tiny">Keep timecodes, funny moments, missing shots, and packaging thoughts here.</p><textarea class="workflow-note" style="min-height:200px" oninput="setWorkflowField('notes',this.value)" placeholder="00:42 — funny reaction…">${esc(w.notes)}</textarea></div><div class="panel"><h2>Quick navigation</h2><div class="tile-actions"><button onclick="nav('packaging')">Packaging Library</button><button onclick="nav('editing')">Editing Playbook</button><button onclick="nav('playbook')">Packaging Playbook</button><button onclick="nav('shots')">Shot Library</button><button onclick="nav('epilogue')">Epilogue</button><button onclick="nav('philosophy')">Project Philosophy</button></div></div></div></div>`}
 
 
 function hubMusicSafeUrl(raw){const s=String(raw||'').trim();if(!s)return '';try{const u=new URL(s);return u.protocol==='https:'?u.href:null}catch{return null}}
@@ -354,8 +402,9 @@ async function hubCheckInbox(){
      data[k].unshift(entry);
      added++;
    }
-   if(added||linked){save();render()}
-   hubInboxStatus(added?added+' new reference'+(added===1?'':'s')+' added':feed.items.length+' checked · up to date');
+   const progress=hubApplyWorkflowUpdates(feed);
+   if(added||linked||progress){save();render()}
+   hubInboxStatus(progress?progress+' workflow update'+(progress===1?'':'s')+' applied'+(added?' · '+added+' new references':''):added?added+' new reference'+(added===1?'':'s')+' added':feed.items.length+' checked · up to date');
  }catch(e){hubInboxStatus('unavailable ('+e.message+') — local data safe')}
  finally{
    hubInboxBusy=false;
