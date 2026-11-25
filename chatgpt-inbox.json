@@ -79,6 +79,11 @@
       "status": "Editing",
       "next": "Comedic edits and visual polish. Record retrospective commentary later this week when energy allows.",
       "note": "2026-11-24 — Last confirmed runtime 5:10. Rough cut, awkward cuts/dead space cleanup, and music selection and placement complete. Remaining: comedic edits/visual polish; retrospective commentary later this week (day not set); final audio mix after commentary; color grading/captions; final review, title and thumbnail, export and publish."
+    },
+    {
+      "id": "halloween-v1-gemini-tone-review",
+      "videoTitle": "Halloween in NYC",
+      "note": "Future review task — Once V1 is ready (commentary, comedic polish, color and preliminary audio integrated), export a review copy and upload it to Gemini for a tone/audience-fit critique before finalizing. Use ChatGPT to prepare the prompt from the NYC Diary creative direction, intended viewer experience, tone, references, and decisions accumulated in this conversation and Creative Hub. Request concrete timestamped observations, what is working, tonal mismatches, pacing and humor, where attention drifts, and prioritized edits; distinguish observed issues from subjective preferences. Evaluate against the intended personal diary, not generic retention optimization. No V1 feedback completed yet; date unspecified."
     }
   ]
 }
