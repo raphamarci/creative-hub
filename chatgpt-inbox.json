@@ -313,6 +313,12 @@
       "id": "halloween-confirmed-timestamps-2026-11-26",
       "videoTitle": "Halloween in NYC",
       "note": "2026-11-26 — User supplied actual event timestamps (24-hour format, chronological across midnight): 08:38 work; 12:00 meeting; 13:25 cooking lunch; 16:57 decompress; 20:14 travel; 21:11 pregame; 23:43 party; 02:48 pizza; 03:33 Zzzz. Proposed presentation, not finalized: opening Persona-style circular roadmap with three chapter anchors (08:38 Daytime, 20:14 Night out, 02:48 After midnight), then reusable previous/current/next timestamp cards at actual scene transitions, current largest with activity label. Use one consistent clock format in final design; 24-hour format matches existing game aesthetic, with NEXT DAY at 02:48 to clarify midnight rollover. All nine source timestamps retained. Timestamp graphics still pending; commentary remains complete."
+    },
+    {
+      "id": "halloween-first-timestamp-wip-2026-11-26",
+      "videoTitle": "Halloween in NYC",
+      "next": "Finish the first 08:38 WORK timestamp graphic, then duplicate the finalized template for the remaining eight events; keep routine transitions simple.",
+      "note": "2026-11-26 — First timestamp graphic only, 08:38 WORK, is in progress and explicitly unfinished. Current design shown: tilted rounded white card, bold black time/activity text, black outline, blue offset shadow, dashed elliptical orbit. Subject masking attempted; user reports it took a long time. Finish first card next editing session (no date assigned); remaining eight graphics not created. Reuse editable text and static orbit/card template; avoiding complex masking on later transitions is a proposed efficiency measure. Commentary previously confirmed done. No additional stage marked complete; all remaining editing, privacy, audio/color/captions, V1 review, packaging and publication tasks preserved."
     }
   ]
 }
