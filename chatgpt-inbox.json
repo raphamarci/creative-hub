@@ -218,6 +218,16 @@
         "notes": "Creative concept: adapt Persona 5's calendar progression (user reference image: stylized black/white outlined dates arranged in perspective around a cityscape, current date largest in foreground, neighboring dates smaller and receding) into an hour-by-hour roadmap for NYC diary vlogs. Arrange selected actual scene times on a curved/circular perspective carousel, with the current time prominent in front and earlier/upcoming times visible around it. Optional small activity labels underneath each time. Rotate/advance at meaningful scene transitions, not continuously. Can communicate the day's progression and become a recurring game-inspired visual motif. Use real footage times, not invented timestamps. For Vlog #1, a static/perspective proof of concept is a low-effort alternative; full animation remains a future experiment, not a required deliverable. Reference screenshot composition described here; image file itself not attached."
       },
       "images": []
+    },
+    {
+      "id": "editing-club-penguin-screen-censorship",
+      "collection": "editing",
+      "entry": {
+        "title": "Club Penguin work-screen censorship",
+        "category": "Recurring visual gag",
+        "notes": "User's preferred work monitor censorship concept: fully replace confidential screen contents with Club Penguin gameplay. The contrast between serious concentration and mundane penguin activities is the joke. Rotate activities in later work scenes (Pizzatron 3000, ice fishing, Cart Surfer, igloo decorating). No verbal explanation. Use fully opaque tracked overlays covering all confidential screen areas, and inspect the export for accidental exposure. Use footage/assets appropriately. Not confirmed implemented yet."
+      },
+      "images": []
     }
   ],
   "workflowUpdates": [
