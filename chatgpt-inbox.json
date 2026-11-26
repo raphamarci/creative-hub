@@ -298,6 +298,16 @@
       "videoTitle": "Halloween in NYC",
       "next": "Finish timestamp transitions and opening Persona-style roadmap, then remaining visual polish and privacy review.",
       "note": "2026-11-26 — User reports commentary needed very little because it was only one part. VO-only approach remains. Next focus: actual timestamps/activity list, reusable three-timestamp transitions at major time jumps, opening circular roadmap and masking. Commentary completion not explicitly confirmed; no additional full stage checked. Preserve privacy review before external review, audio/color/captions, Gemini critique, dedicated packaging and publication window Nov 30–Dec 6."
+    },
+    {
+      "id": "halloween-commentary-complete-2026-11-26",
+      "videoTitle": "Halloween in NYC",
+      "completedStages": [
+        11
+      ],
+      "detailedEdit": true,
+      "next": "Complete timestamp transitions and opening Persona roadmap, remaining comedic polish and privacy checks; then audio mix and color/captions.",
+      "note": "2026-11-26 — User explicitly confirms retrospective commentary is done (voiceover only). Mark stage 11 complete. Timestamp graphics, remaining comedic/visual polish, privacy pass, audio mix, color/captions, V1 review, packaging and publication remain pending unless separately confirmed. Publication window remains Nov 30–Dec 6."
     }
   ]
 }
