@@ -261,6 +261,11 @@
       "id": "halloween-v1-gemini-tone-review",
       "videoTitle": "Halloween in NYC",
       "note": "Future review task — Once V1 is ready (commentary, comedic polish, color and preliminary audio integrated), export a review copy and upload it to Gemini for a tone/audience-fit critique before finalizing. Use ChatGPT to prepare the prompt from the NYC Diary creative direction, intended viewer experience, tone, references, and decisions accumulated in this conversation and Creative Hub. Request concrete timestamped observations, what is working, tonal mismatches, pacing and humor, where attention drifts, and prioritized edits; distinguish observed issues from subjective preferences. Evaluate against the intended personal diary, not generic retention optimization. No V1 feedback completed yet; date unspecified."
+    },
+    {
+      "id": "halloween-persona-orbit-polish-deferred-2026-11-25",
+      "videoTitle": "Halloween in NYC",
+      "note": "2026-11-25 — Defer polished Persona-style schedule overlay to another editing day (no date set). Opening full roadmap; simplified timestamp graphics at major scene jumps. User liked revised asymmetric diagonal orbit, thin white dashed line, bold slanted current timestamp, red accents and activity labels, no generic heading. For depth, keep line and timestamps separate transparent assets: original footage V1, orbit V2, duplicate footage with tracked subject mask V3, foreground timestamp labels V4. Mask only intersections to save time. Actual remaining timestamps/activity labels pending. Placeholder design tested visually, not confirmed implemented or completed."
     }
   ]
 }
