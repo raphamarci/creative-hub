@@ -281,6 +281,19 @@
         "notes": "User explicitly clarifies: episodes can be watched out of order and still make sense. Each is a standalone entry point, not a serialized story requiring previous episodes. Final edit test: imagine this is the first episode a viewer discovers, regardless of its release number. Supply essential context within the episode; continuity and callbacks are optional added value."
       },
       "images": []
+    },
+    {
+      "id": "inspiration-linear-chapter-roadmap",
+      "collection": "inspiration",
+      "entry": {
+        "title": "Linear Chapter Roadmap — Milestone Progress Bar",
+        "category": "Roadmap graphics / chapter transitions",
+        "url": "",
+        "notes": "Reference shared Nov 27, 2026. Lower-third horizontal white line connects six outlined circle milestones; video timestamps sit above, short chapter labels below; current milestone highlighted with a colored fill/icon. Example labels: House Tour, 2 Days Before Surprise, Meeting Core Boys, 1 Day Before Surprise, The Silver Surfer Room Tour, Final Surprise. This is a structural overview of the episode (video timecodes rather than time of day). Useful for multi-objective or multi-location episodes, with current chapter highlighted; keep labels short, retain visible progress, avoid spoiling surprises. User prefers existing Persona-inspired orbit and transitions for current vlog. Save as alternative inspiration only; do not replace existing design or create new required Vlog #1 tasks. Attached image is a low-resolution compressed preview; source URL not provided."
+      },
+      "images": [
+        "assets/references/0c2473e4ef877c6b166e6d022bae033dd20cedde2e2f17081b4d804949073bbe.webp"
+      ]
     }
   ],
   "workflowUpdates": [
