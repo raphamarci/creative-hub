@@ -271,6 +271,16 @@
         "notes": "Standing rule: every diary episode should be accessible to a first-time viewer who has never visited the channel. Check that premise, scene purpose, spoken references, jokes, transitions, context and ending make sense without previous episodes. Recurring jokes and callbacks may reward loyal viewers but must not require prior knowledge. Add only necessary context through VO, a brief label or footage; avoid lengthy exposition. User's distinction: 'wanna be top gear not breaking bad'. Include cold-viewer comprehension in final edit and V1 Gemini critique."
       },
       "images": []
+    },
+    {
+      "id": "editing-out-of-order-episode-test",
+      "collection": "editing",
+      "entry": {
+        "title": "Out-of-Order Episode Test",
+        "category": "Final edit / narrative clarity",
+        "notes": "User explicitly clarifies: episodes can be watched out of order and still make sense. Each is a standalone entry point, not a serialized story requiring previous episodes. Final edit test: imagine this is the first episode a viewer discovers, regardless of its release number. Supply essential context within the episode; continuity and callbacks are optional added value."
+      },
+      "images": []
     }
   ],
   "workflowUpdates": [
@@ -347,6 +357,11 @@
       "id": "halloween-cold-viewer-final-review-2026-11-27",
       "videoTitle": "Halloween in NYC",
       "note": "2026-11-27 — Required final edit and Gemini V1 review checkpoint: cold-viewer comprehension ('Top Gear, not Breaking Bad'). Evaluate as if viewer has never watched this channel or knows nothing about the creator. Can they follow what happens and why, understand commentary/references, jokes and time/location transitions, and follow the standalone narrative through the ending? Identify missing context with timecodes; fix only necessary gaps via brief VO, labels or footage, not an exposition-heavy intro. Callbacks are bonuses, not prerequisites. Preserve privacy check before any external review upload. Review pending; no production stage newly completed."
+    },
+    {
+      "id": "halloween-out-of-order-episode-test-2026-11-27",
+      "videoTitle": "Halloween in NYC",
+      "note": "2026-11-27 — User explicitly clarifies: episodes can be watched out of order and still make sense. Each is a standalone entry point, not a serialized story requiring previous episodes. Final edit test: imagine this is the first episode a viewer discovers, regardless of its release number. Supply essential context within the episode; continuity and callbacks are optional added value. Include in cold-viewer and Gemini V1 review. Pending, no additional edit stage completed."
     }
   ]
 }
