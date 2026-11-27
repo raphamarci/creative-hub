@@ -261,6 +261,16 @@
       "images": [
         "assets/references/08b68b3461cae503e84f0b195f1e8e3e826b04a4d8ecfa5e97f2d60bf2f1d874.webp"
       ]
+    },
+    {
+      "id": "editing-cold-viewer-comprehension",
+      "collection": "editing",
+      "entry": {
+        "title": "Top Gear, Not Breaking Bad — Cold-Viewer Comprehension",
+        "category": "Final edit / narrative clarity",
+        "notes": "Standing rule: every diary episode should be accessible to a first-time viewer who has never visited the channel. Check that premise, scene purpose, spoken references, jokes, transitions, context and ending make sense without previous episodes. Recurring jokes and callbacks may reward loyal viewers but must not require prior knowledge. Add only necessary context through VO, a brief label or footage; avoid lengthy exposition. User's distinction: 'wanna be top gear not breaking bad'. Include cold-viewer comprehension in final edit and V1 Gemini critique."
+      },
+      "images": []
     }
   ],
   "workflowUpdates": [
@@ -332,6 +342,11 @@
       "videoTitle": "Halloween in NYC",
       "next": "Finish the first 08:38 WORK timestamp graphic, then duplicate the finalized template for the remaining eight events; keep routine transitions simple.",
       "note": "2026-11-26 — First timestamp graphic only, 08:38 WORK, is in progress and explicitly unfinished. Current design shown: tilted rounded white card, bold black time/activity text, black outline, blue offset shadow, dashed elliptical orbit. Subject masking attempted; user reports it took a long time. Finish first card next editing session (no date assigned); remaining eight graphics not created. Reuse editable text and static orbit/card template; avoiding complex masking on later transitions is a proposed efficiency measure. Commentary previously confirmed done. No additional stage marked complete; all remaining editing, privacy, audio/color/captions, V1 review, packaging and publication tasks preserved."
+    },
+    {
+      "id": "halloween-cold-viewer-final-review-2026-11-27",
+      "videoTitle": "Halloween in NYC",
+      "note": "2026-11-27 — Required final edit and Gemini V1 review checkpoint: cold-viewer comprehension ('Top Gear, not Breaking Bad'). Evaluate as if viewer has never watched this channel or knows nothing about the creator. Can they follow what happens and why, understand commentary/references, jokes and time/location transitions, and follow the standalone narrative through the ending? Identify missing context with timecodes; fix only necessary gaps via brief VO, labels or footage, not an exposition-heavy intro. Callbacks are bonuses, not prerequisites. Preserve privacy check before any external review upload. Review pending; no production stage newly completed."
     }
   ]
 }
