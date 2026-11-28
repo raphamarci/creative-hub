@@ -385,6 +385,11 @@
       "id": "halloween-out-of-order-episode-test-2026-11-27",
       "videoTitle": "Halloween in NYC",
       "note": "2026-11-27 — User explicitly clarifies: episodes can be watched out of order and still make sense. Each is a standalone entry point, not a serialized story requiring previous episodes. Final edit test: imagine this is the first episode a viewer discovers, regardless of its release number. Supply essential context within the episode; continuity and callbacks are optional added value. Include in cold-viewer and Gemini V1 review. Pending, no additional edit stage completed."
+    },
+    {
+      "id": "halloween-graphics-library-deferred-2026-11-27",
+      "videoTitle": "Halloween in NYC",
+      "note": "2026-11-27 — Defer reusable Premiere graphics library until the Halloween vlog edit and its graphics are finalized. Save opening roadmap and time-passing transition as separate editable sequences in a dedicated NYC Diary - Graphics Library.prproj, remove shot-specific masks in template copies, retain permanent dashed orbit PNG and other dependencies. Import desired sequences into future vlog projects. No fixed date or publication prerequisite; not completed. Do not interrupt current edit to build library."
     }
   ]
 }
